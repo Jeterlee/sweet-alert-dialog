@@ -31,7 +31,7 @@ public class Rotate3dAnimation extends Animation {
         public float value;
     }
 
-    Description parseValue(TypedValue value) {
+    private Description parseValue(TypedValue value) {
         Description d = new Description();
         if (value == null) {
             d.type = ABSOLUTE;
@@ -61,7 +61,7 @@ public class Rotate3dAnimation extends Animation {
         return d;
     }
 
-    public Rotate3dAnimation (Context context, AttributeSet attrs) {
+    public Rotate3dAnimation(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.Rotate3dAnimation);
@@ -82,7 +82,7 @@ public class Rotate3dAnimation extends Animation {
         initializePivotPoint();
     }
 
-    public Rotate3dAnimation (int rollType, float fromDegrees, float toDegrees) {
+    public Rotate3dAnimation(int rollType, float fromDegrees, float toDegrees) {
         mRollType = rollType;
         mFromDegrees = fromDegrees;
         mToDegrees = toDegrees;
@@ -90,7 +90,7 @@ public class Rotate3dAnimation extends Animation {
         mPivotY = 0.0f;
     }
 
-    public Rotate3dAnimation (int rollType, float fromDegrees, float toDegrees, float pivotX, float pivotY) {
+    public Rotate3dAnimation(int rollType, float fromDegrees, float toDegrees, float pivotX, float pivotY) {
         mRollType = rollType;
         mFromDegrees = fromDegrees;
         mToDegrees = toDegrees;
@@ -102,7 +102,7 @@ public class Rotate3dAnimation extends Animation {
         initializePivotPoint();
     }
 
-    public Rotate3dAnimation (int rollType, float fromDegrees, float toDegrees, int pivotXType, float pivotXValue, int pivotYType, float pivotYValue) {
+    public Rotate3dAnimation(int rollType, float fromDegrees, float toDegrees, int pivotXType, float pivotXValue, int pivotYType, float pivotYValue) {
         mRollType = rollType;
         mFromDegrees = fromDegrees;
         mToDegrees = toDegrees;
@@ -148,6 +148,8 @@ public class Rotate3dAnimation extends Animation {
                 break;
             case ROLL_BY_Z:
                 mCamera.rotateZ(degrees);
+                break;
+            default:
                 break;
         }
         mCamera.getMatrix(matrix);
