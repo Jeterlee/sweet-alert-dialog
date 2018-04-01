@@ -7,3 +7,12 @@
 /build
 /captures
 .externalNativeBuild
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+clean(Android).bat
+out
+gen
